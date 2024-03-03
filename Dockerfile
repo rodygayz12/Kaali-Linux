@@ -14,7 +14,7 @@ RUN mkdir /run/sshd
 RUN echo '/usr/sbin/sshd -D' >>/start
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-RUN echo root:root|chpasswd
+RUN echo umar:root|chpasswd
 RUN service ssh start
 RUN chmod 755 /start
 EXPOSE 22 4200
